@@ -51,5 +51,4 @@ Include:
 
 - Social media links
 
-
-note: i vibe enginnered all the sections to look to my styling  
+NB:I EXPERIENCED SOME ERROS IN THE CODE I VIBE ENGINNERD EACH SECTION TO LOOK GOOD. 
