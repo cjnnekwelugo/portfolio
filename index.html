@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio- Chijioke Nnekwelugo</title>
+    <title>Portfolio - Chijioke Nnekwelugo</title>
     <link rel="stylesheet" href="css/output.css">
+    <style>
+        /* Offset each section so the sticky header doesn't overlap the target */
+        section[id] {
+            scroll-margin-top: 88px;
+        }
+        #home {
+            scroll-margin-top: 88px;
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100">
+
+    <!-- ── HEADER ─────────────────────────────────────────── -->
     <header class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/95 backdrop-blur-xl shadow-lg">
         <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5">
             <a href="#home" class="flex items-center gap-3 text-white">
@@ -20,72 +31,91 @@
             </a>
 
             <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
-                <a href="#home" class="transition hover:text-blue-300">Home</a>
-                <a href="#about" class="transition hover:text-blue-300">About</a>
-                <a href="#skills" class="transition hover:text-blue-300">Skills</a>
+                <a href="#home"     class="transition hover:text-blue-300">Home</a>
+                <a href="#about"    class="transition hover:text-blue-300">About</a>
+                <a href="#skills"   class="transition hover:text-blue-300">Skills</a>
                 <a href="#projects" class="transition hover:text-blue-300">Projects</a>
-                <a href="#contact" class="transition hover:text-blue-300">Contact</a>
+                <a href="#contact"  class="transition hover:text-blue-300">Contact</a>
             </nav>
 
-            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800/80 bg-slate-900/90 text-slate-100 transition hover:border-blue-400 hover:text-blue-300 md:hidden">
+            <!-- Mobile toggle -->
+            <button
+                id="mobile-menu-button"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800/80 bg-slate-900/90 text-slate-100 transition hover:border-blue-400 hover:text-blue-300 md:hidden"
+            >
                 <span class="sr-only">Toggle navigation</span>
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Hamburger icon (shown when menu is closed) -->
+                <svg id="icon-open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <!-- Close icon (shown when menu is open) -->
+                <svg id="icon-close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6l12 12M6 18L18 6" />
                 </svg>
             </button>
 
-            <div id="mobile-menu" class="absolute inset-x-6 top-full mt-3 hidden rounded-3xl border border-slate-800/80 bg-slate-950/98 p-5 shadow-2xl md:hidden">
+            <!-- Mobile menu dropdown -->
+            <div
+                id="mobile-menu"
+                class="absolute inset-x-6 top-full mt-3 hidden rounded-3xl border border-slate-800/80 bg-slate-950/98 p-5 shadow-2xl md:hidden"
+            >
                 <div class="flex flex-col gap-3 text-sm font-medium">
-                    <a href="#home" class="rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Home</a>
-                    <a href="#about" class="rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">About</a>
-                    <a href="#skills" class="rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Skills</a>
-                    <a href="#projects" class="rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Projects</a>
-                    <a href="#contact" class="rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Contact</a>
+                    <a href="#home"     class="mobile-nav-link rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Home</a>
+                    <a href="#about"    class="mobile-nav-link rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">About</a>
+                    <a href="#skills"   class="mobile-nav-link rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Skills</a>
+                    <a href="#projects" class="mobile-nav-link rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Projects</a>
+                    <a href="#contact"  class="mobile-nav-link rounded-2xl px-4 py-3 transition hover:bg-blue-500/10 hover:text-blue-300">Contact</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <main id="home" class="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10">
-        <section class="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+    <!-- ── MAIN CONTENT ───────────────────────────────────── -->
+    <main class="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+
+        <!-- HOME / HERO -->
+        <section id="home" class="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
             <div class="space-y-6 lg:pr-8">
                 <span class="inline-flex items-center rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-200">
-                    Hello, I’m am aspiring full-stack developer & AI enthusiast.
+                    Hello, I'm an aspiring full-stack developer &amp; AI enthusiast.
                 </span>
                 <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                   Am Developing my skills in Full Stack development and AI Automation.
+                    Developing my skills in Full Stack development and AI Automation.
                 </h1>
                 <p class="max-w-xl text-base leading-7 text-slate-300">
-                    Hi, I’m Chijioke Nnekwelugo — a full-stack creator who blends clean visual design with reliable web development to help brands launch their best digital products.
+                    Hi, I'm Chijioke Nnekwelugo — a full-stack creator who blends clean visual design with reliable web development to help brands launch their best digital products.
                 </p>
                 <div class="flex flex-col gap-3 sm:flex-row">
                     <a href="#projects" class="inline-flex items-center justify-center rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-400">
                         View my projects
                     </a>
-                    <a href="assets/Chijioke_Emmanuel_Nnekwelugo_CV.pdf" download="Chijioke_Emmanuel_Nnekwelugo_CV.pdf" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">
+                    <a href="assets/Chijioke_Nnekwelugo_Resume.pdf" download="Chijioke_Emmanuel_Nnekwelugo_CV.pdf" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">
                         Download resume
                     </a>
                 </div>
             </div>
 
-            <div class="relative isolate overflow-hidden rounded border border-slate-800/80  from-slate-900/70 via-slate-950/70 to-slate-900/70 p-1 shadow-2xl shadow-slate-950/40">
+            <div class="relative isolate overflow-hidden rounded border border-slate-800/80 from-slate-900/70 via-slate-950/70 to-slate-900/70 p-1 shadow-2xl shadow-slate-950/40">
                 <div class="relative overflow-hidden rounded-[1.75rem] bg-slate-950">
-                    <img src="assets/My picture.jpeg" alt="Chijioke Nnekwelugo portrait" class="h-full w-full object-cover object-center transition duration-500 ease-out hover:scale-105 " />
+                    <img src="assets/My picture.jpeg" alt="Chijioke Nnekwelugo portrait" class="h-full w-full object-cover object-center transition duration-500 ease-out hover:scale-105" />
                     <div class="absolute -left-10 top-10 h-32 w-32 rounded-full bg-blue-500/15 blur-3xl" aria-hidden="true"></div>
                     <div class="absolute right-8 top-24 h-20 w-20 rounded-full border border-blue-400/20 bg-blue-500/10" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about" class="mt-20 rounded border border-slate-800/80 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-10">
             <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
                 <div class="space-y-6">
                     <p class="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">About me</p>
                     <h2 class="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                        I’m building a stronger foundation in web development while sharpening my full-stack skills every day.
+                        I'm building a stronger foundation in web development while sharpening my full-stack skills every day.
                     </h2>
                     <p class="max-w-xl text-base leading-8 text-slate-300">
-                        I’m Chijioke, a passionate learner who loves turning ideas into clean, usable web experiences. I’m still progressing through my full stack journey, and I’m focused on mastering both frontend design and backend architecture as I grow.
+                        I'm Chijioke, a passionate learner who loves turning ideas into clean, usable web experiences. I'm still progressing through my full stack journey, and I'm focused on mastering both frontend design and backend architecture as I grow.
                     </p>
                     <p class="max-w-xl text-base leading-8 text-slate-300">
                         My goal is to create polished products that feel modern, accessible, and intuitive, while continuously adding new tools and frameworks to my skill set.
@@ -97,15 +127,15 @@
                         <p class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Learning focus</p>
                         <ul class="space-y-3 text-slate-300">
                             <li class="flex items-start gap-3">
-                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400 shrink-0"></span>
                                 <span>Frontend interfaces with React, Tailwind, and modern design systems.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400 shrink-0"></span>
                                 <span>Backend APIs, server logic, and database workflows.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+                                <span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-blue-400 shrink-0"></span>
                                 <span>AI-powered tools, automation, and smarter product experiences.</span>
                             </li>
                         </ul>
@@ -114,20 +144,22 @@
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section id="skills" class="mt-20 rounded border border-slate-800/80 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-10">
             <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                 <div class="space-y-3">
                     <p class="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">Skills</p>
                     <h2 class="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                        Core frontend tools I’ve mastered and the full-stack stack I’m progressing toward.
+                        Core frontend tools I've mastered and the full-stack stack I'm progressing toward.
                     </h2>
                 </div>
                 <p class="max-w-xl text-sm leading-7 text-slate-400">
-                    I’m already comfortable with the fundamentals, and I’m actively building toward more complete full-stack workflows with tools and frameworks in the pipeline.
+                    I'm already comfortable with the fundamentals, and I'm actively building toward more complete full-stack workflows with tools and frameworks in the pipeline.
                 </p>
             </div>
 
             <div class="mt-10 grid gap-6 lg:grid-cols-2">
+                <!-- Already learned -->
                 <div class="space-y-4 rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
                     <div class="flex items-center justify-between">
                         <div>
@@ -137,47 +169,48 @@
                         <span class="inline-flex rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">Progressing</span>
                     </div>
                     <div class="grid gap-4 sm:grid-cols-2">
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">HTML</p>
                             <p class="mt-2 text-sm text-slate-400">Semantic markup for responsive UI.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">CSS</p>
                             <p class="mt-2 text-sm text-slate-400">Styling layouts, animations, and responsive design.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">Tailwind CSS</p>
                             <p class="mt-2 text-sm text-slate-400">Utility-first styling for fast, polished builds.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">GitHub</p>
                             <p class="mt-2 text-sm text-slate-400">Version control, collaboration, and code management.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Coming soon -->
                 <div class="space-y-4 rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">Coming soon</p>
-                            <p class="text-sm text-slate-400">Full-stack tools and frameworks I’m adding next.</p>
+                            <p class="text-sm text-slate-400">Full-stack tools and frameworks I'm adding next.</p>
                         </div>
                         <span class="inline-flex rounded-full bg-blue-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-blue-200">Learning</span>
                     </div>
                     <div class="grid gap-4 sm:grid-cols-2">
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">JavaScript</p>
                             <p class="mt-2 text-sm text-slate-400">Core scripting for modern interactive apps.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">React</p>
                             <p class="mt-2 text-sm text-slate-400">Component-driven UI for scalable frontends.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">Node.js</p>
                             <p class="mt-2 text-sm text-slate-400">Backend JavaScript for APIs and server logic.</p>
                         </div>
-                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 text-slate-200 shadow-sm shadow-slate-950/10">
+                        <div class="rounded-3xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/10">
                             <p class="text-sm font-semibold text-white">Databases</p>
                             <p class="mt-2 text-sm text-slate-400">Learning databases for data-driven apps.</p>
                         </div>
@@ -186,6 +219,7 @@
             </div>
         </section>
 
+        <!-- PROJECTS -->
         <section id="projects" class="mt-20 rounded border border-slate-800/80 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-10">
             <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div class="space-y-3">
@@ -201,10 +235,8 @@
 
             <div class="mt-10 grid gap-6 md:grid-cols-2">
                 <article class="rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
-                    <div class="overflow-hidden rounded  from-slate-900 via-slate-950 to-slate-900">
-                        <div class=" flex items-center justify-center bg-slate-950 text-slate-500">
-                            <img src="assets/portfolio pic.png" alt="Portfolio Showcase project image" class="h-full w-full object-cover" />
-                        </div>
+                    <div class="overflow-hidden rounded-2xl bg-slate-950">
+                        <img src="assets/portfolio pic.png" alt="Portfolio Showcase project image" class="h-full w-full object-cover transition duration-500 ease-out hover:scale-105" />
                     </div>
                     <div class="mt-6 space-y-4">
                         <div>
@@ -223,14 +255,12 @@
                 </article>
 
                 <article class="rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
-                    <div class="overflow-hidden rounded  from-slate-900 via-slate-950 to-slate-900">
-                        <div class=" flex items-center justify-center bg-slate-950 text-slate-500">
-                            <img src="assets/skyline pic.png" alt="Landing Page Redesign project image" class="h-full w-full object-cover" />
-                        </div>
+                    <div class="overflow-hidden rounded-2xl bg-slate-950">
+                        <img src="assets/screencapture-lamo-mfb-vercel-app-2026-06-30-16_06_08.png" alt="Lamo MFB website project image" class="h-full w-full object-cover transition duration-500 ease-out hover:scale-105" />
                     </div>
                     <div class="mt-6 space-y-4">
                         <div>
-                            <h3 class="text-xl font-semibold text-white">Landing Page Redesign</h3>
+                            <h3 class="text-xl font-semibold text-white">Lamo MFB Website</h3>
                             <p class="mt-2 text-sm leading-7 text-slate-400">A modern product landing page with clear content hierarchy and strong visual contrast.</p>
                         </div>
                         <div class="space-y-2 rounded-3xl border border-slate-800/70 bg-slate-950/80 p-4 text-slate-300">
@@ -239,21 +269,19 @@
                         </div>
                         <div class="flex flex-wrap gap-3">
                             <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400">GitHub</a>
-                            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
+                            <a href="https://lamo-mfb.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
-                    <div class="overflow-hidden rounded  from-slate-900 via-slate-950 to-slate-900">
-                        <div class=" flex items-center justify-center bg-slate-950 text-slate-500">
-                            <img src="assets/login pic.png" alt="Login page project image" class="h-full w-full object-cover" />
-                        </div>
+                    <div class="overflow-hidden rounded-2xl bg-slate-950">
+                        <img src="assets/screencapture-mama-put-online-zeta-vercel-app-2026-06-30-15_57_21.png" alt="Mama-put restaurant project image" class="h-full w-full object-cover transition duration-500 ease-out hover:scale-105" />
                     </div>
                     <div class="mt-6 space-y-4">
                         <div>
-                            <h3 class="text-xl font-semibold text-white">Login Page UI</h3>
-                            <p class="mt-2 text-sm leading-7 text-slate-400">A responsive login page with a clean design and smooth user experience.</p>
+                            <h3 class="text-xl font-semibold text-white">Mama-put Restaurant Website</h3>
+                            <p class="mt-2 text-sm leading-7 text-slate-400">A responsive restaurant site with a clean design and smooth user experience.</p>
                         </div>
                         <div class="space-y-2 rounded-3xl border border-slate-800/70 bg-slate-950/80 p-4 text-slate-300">
                             <p class="text-sm font-semibold text-white">Technologies</p>
@@ -261,20 +289,18 @@
                         </div>
                         <div class="flex flex-wrap gap-3">
                             <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400">GitHub</a>
-                            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
+                            <a href="https://mama-put-online-zeta.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="rounded-[1.75rem] border border-slate-800/70 bg-slate-900/80 p-6 shadow-inner shadow-slate-950/10">
-                    <div class="overflow-hidden rounded  from-slate-900 via-slate-950 to-slate-900">
-                        <div class=" flex items-center justify-center bg-slate-950 text-slate-500">
-                            <img src="assets/nexus web pic.png" alt="Consulting website project image" class="h-full w-full object-cover" />
-                        </div>
+                    <div class="overflow-hidden rounded-2xl bg-slate-950">
+                        <img src="assets/nexus web pic.png" alt="Nexus consulting website project image" class="h-full w-full object-cover transition duration-500 ease-out hover:scale-105" />
                     </div>
                     <div class="mt-6 space-y-4">
                         <div>
-                            <h3 class="text-xl font-semibold text-white">Consulting Website</h3>
+                            <h3 class="text-xl font-semibold text-white">Nexus Website</h3>
                             <p class="mt-2 text-sm leading-7 text-slate-400">A consulting website with professional branding and easy navigation.</p>
                         </div>
                         <div class="space-y-2 rounded-3xl border border-slate-800/70 bg-slate-950/80 p-4 text-slate-300">
@@ -283,19 +309,20 @@
                         </div>
                         <div class="flex flex-wrap gap-3">
                             <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400">GitHub</a>
-                            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
+                            <a href="https://tailwind-project-dusky-seven.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300">Live demo</a>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="contact" class="mt-20  border border-slate-800/80 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-10">
+        <!-- CONTACT -->
+        <section id="contact" class="mt-20 rounded border border-slate-800/80 bg-slate-950/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-10">
             <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
                 <div class="space-y-6">
                     <p class="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">Contact</p>
                     <h2 class="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                        Let’s connect. I’m open to new web development opportunities and mentoring conversations.
+                        Let's connect. I'm open to new web development opportunities and mentoring conversations.
                     </h2>
                     <p class="max-w-xl text-base leading-8 text-slate-300">
                         Reach out via email, phone, or through my LinkedIn and GitHub profiles. If you're ready to collaborate, send a message using the form.
@@ -310,8 +337,6 @@
                             <p class="text-sm font-semibold text-white">Phone</p>
                             <p class="mt-2 text-sm">+234 9131398285</p>
                         </div>
-                        
-
                     </div>
                 </div>
 
@@ -337,19 +362,19 @@
             </div>
         </section>
 
-        <footer class="border-t border-slate-800/80 bg-slate-950/95 py-8">
-            <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-                <p class="text-sm">© 2026 Chijioke Nnekwelugo. All rights reserved.</p>
-                <div class="flex flex-wrap items-center gap-4 text-sm">
-                    <a href="https://www.linkedin.com/in/chijioke-emmanuel-nnekwelugo-a717073a9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="transition hover:text-white">LinkedIn</a>
-                    <a href="https://github.com/cjnnekwelugo" class="transition hover:text-white">GitHub</a>
-                    <a href="https://x.com/cjnnekwelugo?s=21" class="transition hover:text-white">Twitter</a>
-                    
-                </div>
-            </div>
-        </footer>
-
-       
     </main>
+
+    <!-- ── FOOTER (outside <main>) ────────────────────────── -->
+    <footer class="mt-20 border-t border-slate-800/80 bg-slate-950/95 py-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-sm">© 2026 Chijioke Nnekwelugo. All rights reserved.</p>
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+                <a href="https://www.linkedin.com/in/chijioke-emmanuel-nnekwelugo-a717073a9?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="transition hover:text-white">LinkedIn</a>
+                <a href="https://github.com/cjnnekwelugo" target="_blank" rel="noopener noreferrer" class="transition hover:text-white">GitHub</a>
+                <a href="https://x.com/cjnnekwelugo?s=21" target="_blank" rel="noopener noreferrer" class="transition hover:text-white">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
