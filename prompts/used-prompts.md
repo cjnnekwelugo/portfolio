@@ -52,3 +52,10 @@ Include:
 - Social media links
 
 NB:I EXPERIENCED SOME ERROS IN THE CODE I VIBE ENGINNERD EACH SECTION TO LOOK GOOD. 
+
+
+
+
+
+
+LASTLY: We were given another AI project to rebuilt this portifoilo so i added ai product section, also added Javascript because of the video.
